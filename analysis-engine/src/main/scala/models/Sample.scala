@@ -213,7 +213,7 @@ object Discretization {
 				  getFeatureFromQuantiles(sample.distance, "distance", Array.empty, partial = travelDistancePartial)
         else None,
         if(!excluded.contains("temperature"))
-				  getFeatureFromQuantiles(sample.temp, "temp", temperatureQuantiles, partial = temperaturePartial)
+				  getFeatureFromQuantiles(sample.temp, "temperature", temperatureQuantiles, partial = temperaturePartial)
         else None,
         if(!excluded.contains("voltage"))
 				  getFeatureFromQuantiles(sample.voltage, "voltage", voltageQuantiles)

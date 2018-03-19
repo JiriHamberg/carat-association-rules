@@ -29,29 +29,16 @@ class MainServlet extends ScalatraServlet with FutureSupport with JacksonJsonSup
     contentType = formats("json")
   }
 
-
-  /* Returns preprocessed app usage
-   * information in JSON format.
-   *
-   */
-  /*get("/app-stats") {
-    AppStats.getAppStats
-  }*/
-
   /* Submits a association rule mining job to spark
    * and returns the discovered rules in JSON format.
    *
    */
 	get("/") {
 
-    println("ALIVE 1")
-
     val applicationName = Try(params("applicationName")).toOption
 		val minSupport = Try(params("minSupport").toDouble).toOption
 		val minConfidence = Try(params("minConfidence").toDouble).toOption
     val excluded = Try(params("excluded")).toOption.getOrElse("")
-
-    println("ALIVE 2")
 
     applicationName.map { applicationName =>
       SparkRunner.runSpark(
