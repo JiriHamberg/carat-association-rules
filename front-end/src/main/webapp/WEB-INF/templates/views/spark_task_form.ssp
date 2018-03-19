@@ -1,0 +1,68 @@
+<form id="rule-search-form" method="post" action="${contextPath}/spark-submit">
+
+  <div class="form-group">
+    <label for="select-app">Application</label>
+      <select id="select-app" placeholder="Select application...">
+		</select>
+  </div>
+
+  <div class="form-group">
+    <label for="minSupport">
+        Minimum Support Threshold
+        <span
+            class="glyphicon glyphicon-question-sign"
+            data-toggle="popover"
+            title="Minimum Support Threshold"
+            data-trigger="hover"
+            data-content="Minimum support threshold determines how rare patterns will be analysed when generating association rules. A minimum support threshold of 0.01 means that at least 1 out of every 100 data samples must support each generated rule. Lowering this value will lead to more rules being generated and to an increase in the analysis time."
+        >
+        </span>
+    </label>
+    <input type="number" step="any" min="0" max="1" class="form-control" id="minSupport" placeholder="Default = 0.01"  />
+  </div>
+
+  <div class="form-group">
+    <label for="minConfidence">
+        Minimum Confidence Threshold
+        <span
+            class="glyphicon glyphicon-question-sign"
+            data-toggle="popover"
+            title="Minimum Confidence Threshold"
+            data-trigger="hover"
+            data-content="Minimum confidence threshold determines how often the association rule must hold true among the data samples that support the rule. A confidence threshold of 0.5 means that at least half of the data samples in which the rule's antesedents appear must also contain the rule's consequents. Decreasing this value will lead to more rules being generated and to an increase in the analysis time."
+        >
+        </span>
+    </label>
+    <input type="number" step="any" min="0" max="1" class="form-control" id="minConfidence" placeholder="Default = 0.5" />
+  </div>
+
+  <div class="checkbox">
+    <label><input type="checkbox" value="cpu">Exclude CPU Usage</label>
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox" value="temp">Exclude Battery Temperature</label>
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox" value="distance">Exclude Travel Distance</label>
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox" value="voltage">Exclude Battery Voltage</label>
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox" value="screen">Exclude Screen Brightness</label>
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox" value="mobileNetType">Exclude Mobile Network Type</label>
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox" value="netType">Exclude Network Type</label>
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox" value="wifiStrength">Exclude WiFi Strength</label>
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox" value="wifiSpeed">Exclude WiFi Speed</label>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Generate Association Rules</button>
+</form>

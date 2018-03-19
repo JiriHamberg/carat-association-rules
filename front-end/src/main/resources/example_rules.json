@@ -1,0 +1,978 @@
+{
+  "minSupport" : 0.01,
+  "minConfidence" : 0.5,
+  "executionTime" : 1739,
+  "bins" : {
+    "wifiStrength" : [ -100.0, -67.0, -60.0, -50.0, 0.0 ],
+    "cpu" : [ 0.0, 0.4108761329305136, 0.604494382022472, 0.8520408163265306, 1.0 ],
+    "screen" : [ 0.0, 55.0, 104.0, 170.0, 255.0 ],
+    "wifiSpeed" : [ 0.0, 54.0, 72.0, 130.0, "Infinity" ],
+    "rate" : [ 0.0, 0.0011376564277588168, 0.003389830508474576, 0.008333333333333333, "Infinity" ],
+    "temp" : [ 5.0, 27.0, 31.0, 34.0, 100.0 ]
+  },
+  "rules" : [ {
+    "antecedents" : [ "mobileNetType=unknown", "wifiSpeed=q1", "temp=q1", "screen=auto", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.8490458326537269
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "wifiSpeed=q1", "temp=q1", "screen=auto", "netType=wifi" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.8480149387026061
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "wifiSpeed=q1", "temp=q1", "screen=auto", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.8477182136175059
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "wifiSpeed=q1", "temp=q1", "screen=auto" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.8461600712146962
+  }, {
+    "antecedents" : [ "netType=unknown", "screen=q1", "temp=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.8071509747355539
+  }, {
+    "antecedents" : [ "netType=unknown", "screen=q1", "temp=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.8045957002350074
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "wifiSpeed=q1", "temp=q1", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.7889275718479077
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "wifiSpeed=q1", "temp=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.7874626053848246
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "wifiSpeed=q1", "temp=q1", "netType=wifi" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.7867851570449766
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "wifiSpeed=q1", "temp=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.7849716446124764
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "temp=q1", "screen=auto", "voltage=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.7726642137644008
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "temp=q1", "screen=auto", "voltage=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.7717371844602255
+  }, {
+    "antecedents" : [ "netType=unknown", "temp=q1", "voltage=q2", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.7673637702503682
+  }, {
+    "antecedents" : [ "netType=unknown", "temp=q1", "voltage=q2" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.7647366889729416
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "temp=q1", "screen=auto", "netType=wifi", "voltage=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.7643064245383794
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "temp=q1", "screen=auto", "netType=wifi", "voltage=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.7626220573764287
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "temp=q1", "screen=auto", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.7324857584788924
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "temp=q1", "screen=auto" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.7314607579826917
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "temp=q1", "cpu=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.7272089761570828
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "temp=q1", "cpu=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.724949795720518
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "temp=q1", "screen=auto", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.7235038290630613
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "temp=q1", "screen=auto", "netType=wifi" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.7224539532267892
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "temp=q1", "voltage=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.7104714064914992
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "temp=q1", "voltage=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.7079996949592008
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "temp=q1", "netType=wifi", "voltage=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.7026092593592999
+  }, {
+    "antecedents" : [ "netType=unknown", "temp=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.7016316400887105
+  }, {
+    "antecedents" : [ "netType=unknown", "temp=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6995283141792407
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "temp=q1", "netType=wifi", "voltage=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6992898713225479
+  }, {
+    "antecedents" : [ "wifiSpeed=q1", "temp=q1", "screen=auto", "netType=wifi", "voltage=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6941303824873707
+  }, {
+    "antecedents" : [ "wifiSpeed=q1", "temp=q1", "screen=auto", "netType=wifi", "voltage=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6857426204643565
+  }, {
+    "antecedents" : [ "wifiSpeed=q1", "temp=q1", "screen=auto", "voltage=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6810617602250087
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "temp=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6803391275517454
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "temp=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6784837933210255
+  }, {
+    "antecedents" : [ "netType=unknown", "screen=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6782210330008919
+  }, {
+    "antecedents" : [ "netType=unknown", "screen=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6750603378921963
+  }, {
+    "antecedents" : [ "wifiSpeed=q1", "temp=q1", "screen=auto", "voltage=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.670173057346454
+  }, {
+    "antecedents" : [ "netType=unknown", "voltage=q2", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6673969682614874
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "temp=q1", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.664135457394901
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "temp=q1", "netType=wifi" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6622277575525324
+  }, {
+    "antecedents" : [ "netType=unknown", "voltage=q2" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6602961979271919
+  }, {
+    "antecedents" : [ "mobileNetType=edge", "netType=unknown", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6543150848673202
+  }, {
+    "antecedents" : [ "netType=unknown", "temp=q1", "voltage=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6488575268817204
+  }, {
+    "antecedents" : [ "wifiStrength=q1", "temp=q1", "screen=auto", "netType=wifi", "voltage=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.648797158748241
+  }, {
+    "antecedents" : [ "wifiStrength=q1", "wifiSpeed=q1", "temp=q1", "netType=wifi", "voltage=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6483687943262412
+  }, {
+    "antecedents" : [ "netType=unknown", "temp=q1", "voltage=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6472370850892561
+  }, {
+    "antecedents" : [ "mobileNetType=edge", "netType=unknown" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6472212430971683
+  }, {
+    "antecedents" : [ "wifiStrength=q1", "temp=q1", "screen=auto", "voltage=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6453519256308101
+  }, {
+    "antecedents" : [ "wifiStrength=q1", "wifiSpeed=q1", "temp=q1", "voltage=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6450615114235501
+  }, {
+    "antecedents" : [ "wifiStrength=q1", "temp=q1", "screen=auto", "netType=wifi", "voltage=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6420299284320105
+  }, {
+    "antecedents" : [ "wifiStrength=q1", "wifiSpeed=q1", "temp=q1", "netType=wifi", "voltage=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.641420772579642
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "temp=q1", "voltage=q2", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6379820091841228
+  }, {
+    "antecedents" : [ "netType=unknown", "cpu=q2", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6379377540226046
+  }, {
+    "antecedents" : [ "wifiStrength=q1", "temp=q1", "screen=auto", "voltage=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.637662504826876
+  }, {
+    "antecedents" : [ "wifiStrength=q1", "wifiSpeed=q1", "temp=q1", "voltage=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6374521072796935
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "temp=q1", "voltage=q2" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6370067014147431
+  }, {
+    "antecedents" : [ "netType=unknown", "cpu=q2" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6307826276259932
+  }, {
+    "antecedents" : [ "wifiStrength=q1", "wifiSpeed=q1", "temp=q1", "screen=auto", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.62998687664042
+  }, {
+    "antecedents" : [ "wifiSpeed=q1", "temp=q1", "screen=auto", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.627561284554057
+  }, {
+    "antecedents" : [ "wifiStrength=q1", "wifiSpeed=q1", "temp=q1", "screen=auto", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6270833333333333
+  }, {
+    "antecedents" : [ "wifiStrength=q1", "wifiSpeed=q1", "temp=q1", "screen=auto", "netType=wifi" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6239959199285987
+  }, {
+    "antecedents" : [ "wifiSpeed=q1", "temp=q1", "screen=auto", "netType=wifi" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6209298967583567
+  }, {
+    "antecedents" : [ "wifiStrength=q1", "wifiSpeed=q1", "temp=q1", "screen=auto" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6204587097997094
+  }, {
+    "antecedents" : [ "wifiSpeed=q1", "temp=q1", "screen=auto", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6193183889192637
+  }, {
+    "antecedents" : [ "netType=unknown", "cpu=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6141037474616947
+  }, {
+    "antecedents" : [ "screen=q1", "temp=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6120176120176121
+  }, {
+    "antecedents" : [ "wifiSpeed=q1", "temp=q1", "screen=auto" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6108610016882386
+  }, {
+    "antecedents" : [ "netType=unknown", "cpu=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.607943303234162
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "wifiSpeed=q1", "screen=auto", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6048348618989556
+  }, {
+    "antecedents" : [ "screen=q1", "temp=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.604559861691399
+  }, {
+    "antecedents" : [ "wifiStrength=q2", "temp=q1", "screen=auto", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6025878983931696
+  }, {
+    "antecedents" : [ "wifiStrength=q2", "temp=q1", "screen=auto", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6025078038199037
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "wifiSpeed=q1", "screen=auto", "netType=wifi" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.6008804108584006
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "wifiSpeed=q1", "screen=auto", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5997700428556496
+  }, {
+    "antecedents" : [ "wifiStrength=q2", "temp=q1", "screen=auto", "netType=wifi" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5985031014507612
+  }, {
+    "antecedents" : [ "wifiStrength=q2", "temp=q1", "screen=auto" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5983124520582971
+  }, {
+    "antecedents" : [ "netType=unknown", "mobileNetType=hspa", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5964037808300103
+  }, {
+    "antecedents" : [ "wifiStrength=q1", "wifiSpeed=q1", "temp=q1", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5938528138528139
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "wifiSpeed=q1", "screen=auto" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5929862394742247
+  }, {
+    "antecedents" : [ "wifiSpeed=q1", "temp=q1", "netType=wifi", "voltage=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5917692752665069
+  }, {
+    "antecedents" : [ "netType=unknown", "mobileNetType=hspa" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5913642960812772
+  }, {
+    "antecedents" : [ "wifiStrength=q1", "wifiSpeed=q1", "temp=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5913106879396123
+  }, {
+    "antecedents" : [ "wifiStrength=q1", "wifiSpeed=q1", "temp=q1", "netType=wifi" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5890260862236082
+  }, {
+    "antecedents" : [ "wifiSpeed=q1", "temp=q1", "netType=wifi", "voltage=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5864105758026279
+  }, {
+    "antecedents" : [ "wifiStrength=q1", "wifiSpeed=q1", "temp=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5859925749801861
+  }, {
+    "antecedents" : [ "temp=q1", "cpu=q1", "voltage=q2", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5859816048208056
+  }, {
+    "antecedents" : [ "wifiStrength=q1", "temp=q1", "netType=wifi", "voltage=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5857528536920381
+  }, {
+    "antecedents" : [ "wifiSpeed=q1", "temp=q1", "voltage=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5840478886911503
+  }, {
+    "antecedents" : [ "wifiStrength=q1", "temp=q1", "voltage=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5829974693035899
+  }, {
+    "antecedents" : [ "wifiStrength=q1", "temp=q1", "netType=wifi", "voltage=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5797979797979798
+  }, {
+    "antecedents" : [ "temp=q1", "cpu=q1", "voltage=q2" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5792597452951177
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "temp=q4", "netType=wifi" ],
+    "consequents" : [ "rate=q3" ],
+    "confidence" : 0.5788462593995279
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "temp=q4", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q3" ],
+    "confidence" : 0.5786819098856758
+  }, {
+    "antecedents" : [ "wifiSpeed=q1", "temp=q1", "voltage=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5772848408841511
+  }, {
+    "antecedents" : [ "cpu=q2", "temp=q1", "voltage=q2", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5764466904478796
+  }, {
+    "antecedents" : [ "wifiStrength=q1", "temp=q1", "voltage=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.576380382015335
+  }, {
+    "antecedents" : [ "wifiStrength=q1", "temp=q1", "screen=auto", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5735294117647058
+  }, {
+    "antecedents" : [ "temp=q1", "cpu=q1", "screen=auto", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5729881354004777
+  }, {
+    "antecedents" : [ "temp=q1", "cpu=q1", "screen=auto", "netType=wifi" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5727986050566696
+  }, {
+    "antecedents" : [ "wifiSpeed=q1", "temp=q1", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5714250698563655
+  }, {
+    "antecedents" : [ "wifiStrength=q1", "temp=q1", "screen=auto", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5711110196352859
+  }, {
+    "antecedents" : [ "cpu=q2", "temp=q1", "voltage=q2" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5706330318895764
+  }, {
+    "antecedents" : [ "wifiStrength=q1", "temp=q1", "screen=auto", "netType=wifi" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5699967799066173
+  }, {
+    "antecedents" : [ "temp=q1", "cpu=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5693196695408785
+  }, {
+    "antecedents" : [ "cpu=q2", "temp=q1", "screen=auto", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5677065478231059
+  }, {
+    "antecedents" : [ "wifiSpeed=q1", "temp=q1", "netType=wifi" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5670520920252712
+  }, {
+    "antecedents" : [ "wifiStrength=q1", "temp=q1", "screen=auto" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5670517928286852
+  }, {
+    "antecedents" : [ "wifiSpeed=q1", "temp=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5662743399042048
+  }, {
+    "antecedents" : [ "cpu=q2", "temp=q1", "screen=auto", "netType=wifi" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5661622041133101
+  }, {
+    "antecedents" : [ "temp=q1", "screen=auto", "netType=wifi", "voltage=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5655357351055148
+  }, {
+    "antecedents" : [ "temp=q1", "cpu=q1", "netType=wifi", "voltage=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.565374303980202
+  }, {
+    "antecedents" : [ "wifiStrength=q2", "temp=q1", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5636350159365503
+  }, {
+    "antecedents" : [ "wifiStrength=q2", "temp=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.563537545753688
+  }, {
+    "antecedents" : [ "temp=q1", "cpu=q1", "netType=wifi", "voltage=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5633649663898774
+  }, {
+    "antecedents" : [ "temp=q1", "screen=auto", "netType=wifi", "voltage=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5624859215209262
+  }, {
+    "antecedents" : [ "temp=q1", "cpu=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5622861685666019
+  }, {
+    "antecedents" : [ "wifiStrength=q2", "temp=q1", "netType=wifi" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5608163850927221
+  }, {
+    "antecedents" : [ "wifiSpeed=q1", "temp=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5607683869010107
+  }, {
+    "antecedents" : [ "wifiStrength=q2", "temp=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5606282872374683
+  }, {
+    "antecedents" : [ "temp=q1", "cpu=q1", "screen=auto", "voltage=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5596109309865679
+  }, {
+    "antecedents" : [ "temp=q1", "cpu=q1", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5555180472604518
+  }, {
+    "antecedents" : [ "temp=q1", "cpu=q1", "netType=wifi" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5552509594776455
+  }, {
+    "antecedents" : [ "netType=unknown", "cpu=q1", "voltage=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5542544886807181
+  }, {
+    "antecedents" : [ "temp=q1", "cpu=q1", "voltage=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5540986428714888
+  }, {
+    "antecedents" : [ "temp=q1", "cpu=q1", "screen=auto", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5539842873176206
+  }, {
+    "antecedents" : [ "netType=unknown", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5517825704225352
+  }, {
+    "antecedents" : [ "temp=q1", "cpu=q1", "screen=auto", "voltage=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5511358690921752
+  }, {
+    "antecedents" : [ "temp=q1", "voltage=q2", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5506061758121066
+  }, {
+    "antecedents" : [ "netType=unknown", "cpu=q1", "voltage=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5486497568976627
+  }, {
+    "antecedents" : [ "wifiStrength=q1", "temp=q1", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5479052429702062
+  }, {
+    "antecedents" : [ "temp=q1", "screen=auto", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5474884563381719
+  }, {
+    "antecedents" : [ "temp=q1", "cpu=q1", "voltage=q2", "screen=auto", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5474259139087173
+  }, {
+    "antecedents" : [ "temp=q1", "cpu=q1", "screen=auto" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5468483816013628
+  }, {
+    "antecedents" : [ "temp=q1", "cpu=q1", "voltage=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5467922786631553
+  }, {
+    "antecedents" : [ "temp=q1", "cpu=q1", "voltage=q2", "netType=wifi" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5467089691292744
+  }, {
+    "antecedents" : [ "netType=unknown" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5459068246394682
+  }, {
+    "antecedents" : [ "temp=q1", "screen=auto", "netType=wifi" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5458780611050174
+  }, {
+    "antecedents" : [ "wifiStrength=q1", "temp=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5457874478776863
+  }, {
+    "antecedents" : [ "temp=q1", "cpu=q1", "voltage=q2", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5451543581948739
+  }, {
+    "antecedents" : [ "wifiStrength=q1", "temp=q1", "netType=wifi" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.544792539815591
+  }, {
+    "antecedents" : [ "temp=q1", "voltage=q2" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5446179839691049
+  }, {
+    "antecedents" : [ "cpu=q2", "temp=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5442993602664096
+  }, {
+    "antecedents" : [ "wifiStrength=q1", "temp=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5422385663230953
+  }, {
+    "antecedents" : [ "temp=q1", "cpu=q1", "voltage=q2", "screen=auto" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5418932527693857
+  }, {
+    "antecedents" : [ "wifiSpeed=q2", "temp=q1", "screen=auto", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.54061090706216
+  }, {
+    "antecedents" : [ "netType=unknown", "mobileNetType=unknown", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5403741323189145
+  }, {
+    "antecedents" : [ "netType=unknown", "temp=q2", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5399820305480683
+  }, {
+    "antecedents" : [ "cpu=q4", "temp=q1", "screen=auto", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.539462469458492
+  }, {
+    "antecedents" : [ "wifiSpeed=q1", "temp=q1", "voltage=q2", "netType=wifi" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5387800982074188
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "temp=q4", "voltage=q1" ],
+    "consequents" : [ "rate=q3" ],
+    "confidence" : 0.5380694980694981
+  }, {
+    "antecedents" : [ "wifiSpeed=q2", "temp=q1", "screen=auto" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5380246134427265
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "temp=q4", "voltage=q1", "distance=no" ],
+    "consequents" : [ "rate=q3" ],
+    "confidence" : 0.5379365079365079
+  }, {
+    "antecedents" : [ "netType=unknown", "mobileNetType=unknown" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5367897455519418
+  }, {
+    "antecedents" : [ "cpu=q2", "temp=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5366980181390661
+  }, {
+    "antecedents" : [ "wifiSpeed=q1", "temp=q1", "voltage=q2" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5364006988934188
+  }, {
+    "antecedents" : [ "cpu=q2", "temp=q1", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5362907863962272
+  }, {
+    "antecedents" : [ "netType=unknown", "temp=q2" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5362502474757473
+  }, {
+    "antecedents" : [ "wifiSpeed=q2", "temp=q1", "screen=auto", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5356329474283545
+  }, {
+    "antecedents" : [ "cpu=q4", "temp=q1", "screen=auto", "voltage=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5354312882046638
+  }, {
+    "antecedents" : [ "mobileNetType=hspa", "temp=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5353784715919404
+  }, {
+    "antecedents" : [ "cpu=q2", "temp=q4", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q3" ],
+    "confidence" : 0.5350483832900638
+  }, {
+    "antecedents" : [ "cpu=q2", "temp=q1", "netType=wifi" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5349789642205592
+  }, {
+    "antecedents" : [ "wifiSpeed=q2", "temp=q1", "screen=auto", "netType=wifi" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5333517342901831
+  }, {
+    "antecedents" : [ "cpu=q4", "temp=q1", "screen=auto", "netType=wifi" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5331715656537804
+  }, {
+    "antecedents" : [ "cpu=q2", "temp=q4", "netType=wifi" ],
+    "consequents" : [ "rate=q3" ],
+    "confidence" : 0.5324934288044956
+  }, {
+    "antecedents" : [ "temp=q4", "cpu=q1", "netType=wifi" ],
+    "consequents" : [ "rate=q3" ],
+    "confidence" : 0.5320008179122789
+  }, {
+    "antecedents" : [ "temp=q4", "cpu=q1", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q3" ],
+    "confidence" : 0.5311037492769627
+  }, {
+    "antecedents" : [ "cpu=q2", "temp=q1", "screen=auto", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5301246404602109
+  }, {
+    "antecedents" : [ "mobileNetType=hspa", "temp=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5299298245614035
+  }, {
+    "antecedents" : [ "temp=q1", "screen=auto", "voltage=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5282289139431997
+  }, {
+    "antecedents" : [ "cpu=q4", "temp=q1", "netType=wifi", "voltage=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5278180399152637
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "temp=q4" ],
+    "consequents" : [ "rate=q3" ],
+    "confidence" : 0.5273372202063032
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "temp=q4", "distance=no" ],
+    "consequents" : [ "rate=q3" ],
+    "confidence" : 0.5270071767322785
+  }, {
+    "antecedents" : [ "mobileNetType=utms", "temp=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5257934218118869
+  }, {
+    "antecedents" : [ "temp=q1", "netType=wifi", "voltage=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5255782818891781
+  }, {
+    "antecedents" : [ "cpu=q4", "temp=q1", "screen=auto", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5255570117955439
+  }, {
+    "antecedents" : [ "temp=q1", "screen=auto", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.525290616648358
+  }, {
+    "antecedents" : [ "temp=q1", "voltage=q2", "screen=auto", "netType=wifi" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5250738269714535
+  }, {
+    "antecedents" : [ "temp=q1", "voltage=q2", "screen=auto", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.524929258630447
+  }, {
+    "antecedents" : [ "cpu=q4", "temp=q1", "screen=auto", "voltage=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5245539324025659
+  }, {
+    "antecedents" : [ "temp=q1", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5232912353849013
+  }, {
+    "antecedents" : [ "temp=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5232653358324386
+  }, {
+    "antecedents" : [ "temp=q1", "cpu=q1", "voltage=q2", "mobileNetType=lte" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5232130102741608
+  }, {
+    "antecedents" : [ "temp=q1", "netType=wifi", "voltage=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.523160017283595
+  }, {
+    "antecedents" : [ "cpu=q4", "temp=q1", "netType=wifi", "voltage=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5230025528216827
+  }, {
+    "antecedents" : [ "temp=q1", "netType=wifi" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5221885498155848
+  }, {
+    "antecedents" : [ "cpu=q2", "temp=q1", "screen=auto" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5216362776140044
+  }, {
+    "antecedents" : [ "temp=q1", "voltage=q2", "netType=wifi" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5213730008836831
+  }, {
+    "antecedents" : [ "netType=unknown", "mobileNetType=unknown", "voltage=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5210229493550729
+  }, {
+    "antecedents" : [ "temp=q1", "voltage=q2", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5208895239796374
+  }, {
+    "antecedents" : [ "temp=q1", "voltage=q2", "screen=auto", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5207744980463461
+  }, {
+    "antecedents" : [ "temp=q1", "screen=auto", "voltage=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.519561307422884
+  }, {
+    "antecedents" : [ "cpu=q2", "temp=q4", "mobileNetType=lte", "distance=no" ],
+    "consequents" : [ "rate=q3" ],
+    "confidence" : 0.5185022510157022
+  }, {
+    "antecedents" : [ "netType=unknown", "mobileNetType=unknown", "voltage=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5178872855976041
+  }, {
+    "antecedents" : [ "temp=q1", "screen=auto" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5178369239836831
+  }, {
+    "antecedents" : [ "cpu=q2", "temp=q1", "voltage=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5175029632556302
+  }, {
+    "antecedents" : [ "temp=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5169267498643516
+  }, {
+    "antecedents" : [ "cpu=q4", "temp=q1", "voltage=q2", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5160033398274423
+  }, {
+    "antecedents" : [ "cpu=q2", "temp=q4", "mobileNetType=lte" ],
+    "consequents" : [ "rate=q3" ],
+    "confidence" : 0.515965019320724
+  }, {
+    "antecedents" : [ "wifiSpeed=q2", "temp=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.515358361774744
+  }, {
+    "antecedents" : [ "temp=q1", "voltage=q2", "screen=auto" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5149767272063521
+  }, {
+    "antecedents" : [ "cpu=q4", "temp=q1", "screen=auto" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5143241117084043
+  }, {
+    "antecedents" : [ "temp=q4", "cpu=q1", "voltage=q1", "distance=no" ],
+    "consequents" : [ "rate=q3" ],
+    "confidence" : 0.5136391190139422
+  }, {
+    "antecedents" : [ "cpu=q2", "temp=q4", "distance=no" ],
+    "consequents" : [ "rate=q3" ],
+    "confidence" : 0.5133692812274168
+  }, {
+    "antecedents" : [ "temp=q4", "cpu=q1", "voltage=q1" ],
+    "consequents" : [ "rate=q3" ],
+    "confidence" : 0.5133655272063576
+  }, {
+    "antecedents" : [ "wifiSpeed=q2", "temp=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.513361207053263
+  }, {
+    "antecedents" : [ "cpu=q4", "temp=q1", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5128230517873057
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "temp=q3", "netType=wifi" ],
+    "consequents" : [ "rate=q3" ],
+    "confidence" : 0.5126170798898072
+  }, {
+    "antecedents" : [ "wifiSpeed=q2", "temp=q1", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5124712876638292
+  }, {
+    "antecedents" : [ "mobileNetType=unknown", "temp=q3", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q3" ],
+    "confidence" : 0.5119509588887015
+  }, {
+    "antecedents" : [ "temp=q4", "cpu=q1", "screen=auto" ],
+    "consequents" : [ "rate=q3" ],
+    "confidence" : 0.5114323126510878
+  }, {
+    "antecedents" : [ "temp=q4", "cpu=q1", "screen=auto", "distance=no" ],
+    "consequents" : [ "rate=q3" ],
+    "confidence" : 0.5112022890460508
+  }, {
+    "antecedents" : [ "wifiSpeed=q2", "temp=q1", "netType=wifi" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5106461376496908
+  }, {
+    "antecedents" : [ "cpu=q2", "temp=q4" ],
+    "consequents" : [ "rate=q3" ],
+    "confidence" : 0.5104041051956383
+  }, {
+    "antecedents" : [ "cpu=q4", "temp=q1", "netType=wifi" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5089182227945911
+  }, {
+    "antecedents" : [ "cpu=q2", "temp=q4", "voltage=q1", "distance=no" ],
+    "consequents" : [ "rate=q3" ],
+    "confidence" : 0.5086818827126788
+  }, {
+    "antecedents" : [ "cpu=q2", "temp=q1", "voltage=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.508652610897
+  }, {
+    "antecedents" : [ "temp=q1", "cpu=q1", "mobileNetType=lte", "netType=wifi" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5073593470585538
+  }, {
+    "antecedents" : [ "cpu=q4", "temp=q1", "voltage=q2" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5072226160935839
+  }, {
+    "antecedents" : [ "temp=q1", "cpu=q3", "voltage=q2", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5056031962580394
+  }, {
+    "antecedents" : [ "cpu=q2", "temp=q4", "screen=auto", "distance=no" ],
+    "consequents" : [ "rate=q3" ],
+    "confidence" : 0.5051225852489933
+  }, {
+    "antecedents" : [ "temp=q4", "cpu=q4", "mobileNetType=lte", "voltage=q1", "distance=no" ],
+    "consequents" : [ "rate=q4" ],
+    "confidence" : 0.5045622288008436
+  }, {
+    "antecedents" : [ "cpu=q2", "temp=q4", "voltage=q1" ],
+    "consequents" : [ "rate=q3" ],
+    "confidence" : 0.5044167534343197
+  }, {
+    "antecedents" : [ "temp=q4", "cpu=q3", "netType=wifi" ],
+    "consequents" : [ "rate=q3" ],
+    "confidence" : 0.5040169442009933
+  }, {
+    "antecedents" : [ "temp=q4", "cpu=q1", "distance=no" ],
+    "consequents" : [ "rate=q3" ],
+    "confidence" : 0.503936545240893
+  }, {
+    "antecedents" : [ "temp=q4", "cpu=q1" ],
+    "consequents" : [ "rate=q3" ],
+    "confidence" : 0.5037707805791038
+  }, {
+    "antecedents" : [ "cpu=q2", "temp=q4", "screen=auto" ],
+    "consequents" : [ "rate=q3" ],
+    "confidence" : 0.5037157454714352
+  }, {
+    "antecedents" : [ "temp=q4", "cpu=q3", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q3" ],
+    "confidence" : 0.5036413862380713
+  }, {
+    "antecedents" : [ "temp=q1", "cpu=q1", "mobileNetType=lte", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5033391405342624
+  }, {
+    "antecedents" : [ "cpu=q4", "temp=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5030073150907614
+  }, {
+    "antecedents" : [ "temp=q1", "cpu=q3", "voltage=q2" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5028293504185568
+  }, {
+    "antecedents" : [ "temp=q1", "voltage=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5027230092268584
+  }, {
+    "antecedents" : [ "temp=q1", "voltage=q2", "mobileNetType=lte", "netType=wifi" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5025636492220651
+  }, {
+    "antecedents" : [ "screen=q4", "temp=q1", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5020461083424497
+  }, {
+    "antecedents" : [ "temp=q4", "cpu=q4", "mobileNetType=lte", "voltage=q1" ],
+    "consequents" : [ "rate=q4" ],
+    "confidence" : 0.502005553841407
+  }, {
+    "antecedents" : [ "temp=q1", "cpu=q1", "mobileNetType=lte", "screen=auto", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5017136590047069
+  }, {
+    "antecedents" : [ "wifiSpeed=q4", "temp=q1", "mobileNetType=lte" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5014734774066798
+  }, {
+    "antecedents" : [ "wifiSpeed=q4", "temp=q1", "mobileNetType=lte", "netType=wifi" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5013215069659096
+  }, {
+    "antecedents" : [ "temp=q1", "voltage=q2", "mobileNetType=lte", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.500834380601166
+  }, {
+    "antecedents" : [ "temp=q1", "voltage=q2", "mobileNetType=lte", "netType=wifi", "distance=no" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5007336757153338
+  }, {
+    "antecedents" : [ "wifiSpeed=q4", "temp=q1" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5003953610964681
+  }, {
+    "antecedents" : [ "wifiSpeed=q4", "temp=q1", "netType=wifi" ],
+    "consequents" : [ "rate=q1" ],
+    "confidence" : 0.5003142677561282
+  } ]
+}

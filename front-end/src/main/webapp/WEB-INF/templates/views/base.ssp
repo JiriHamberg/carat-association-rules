@@ -1,0 +1,39 @@
+<%@ val contextPath: String %>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="${contextPath}/webjars/bootstrap/3.2.0-2/css/bootstrap.css">
+    <!--<link rel="stylesheet" type="text/css" href="${contextPath}/webjars/bootstrap/3.2.0/css/bootstrap-responsive.css">-->
+
+		<link rel="stylesheet" type="text/css" href="${contextPath}/css/list-group-horizontal.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/webjars/selectize.js/0.12.4/css/selectize.bootstrap3.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/webjars/selectize.js/0.12.4/css/selectize.css">
+
+    <script type="application/javascript" src="${contextPath}/webjars/lodash/4.17.4/lodash.min.js"></script>
+    <script type="application/javascript" src="${contextPath}/webjars/jquery/3.2.0/jquery.min.js"></script>
+    <script type="application/javascript" src="${contextPath}/webjars/bootstrap/3.2.0-2/js/bootstrap.js"></script>
+		<!--<script type="application/javascript" src="${contextPath}/webjars/mustache/2.3.0/mustache.min.js"></script>-->
+    <script type="application/javascript" src="${contextPath}/webjars/handlebars/4.0.5/handlebars.min.js"></script>
+    <script type="application/javascript" src="${contextPath}/webjars/spin-js/2.0.0/spin.js"></script>
+    <script type="application/javascript" src="${contextPath}/webjars/spin-js/2.0.0/jquery.spin.js"></script>
+    <script type="application/javascript" src="${contextPath}/webjars/selectize.js/0.12.4/js/standalone/selectize.min.js"></script>
+
+    <script type="application/javascript" src="${contextPath}/js/Services/RuleService.js"></script>
+    <script type="application/javascript" src="${contextPath}/js/Services/AppService.js"></script>
+    <script type="application/javascript" src="${contextPath}/js/Handlebars/Helpers.js"></script>
+		<script type="application/javascript" src="${contextPath}/js/Controllers/SearchFormController.js"></script>
+    <script type="application/javascript" src="${contextPath}/js/Controllers/RuleContainerController.js"></script>
+    <script type="application/javascript" src="${contextPath}/js/Controllers/RateSelectorController.js"></script>
+		<script type="application/javascript" src="${contextPath}/js/Main.js"></script>
+
+		<script type="text/javascript">
+			var contextPath = "${contextPath}";
+		</script
+
+	</head>
+
+	<body onload="Main.main()">
+		<% render("index.ssp") %>
+	</body>
+</html>
