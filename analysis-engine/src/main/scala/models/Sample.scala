@@ -90,9 +90,17 @@ case class SampleDiscretization(
 
 object Discretization {
 
+	val ratePartial: PartialFunction[Double, Option[String]] = {
+		//recharging, discarded
+		case x if x < 0.0 => None
+		case x if x.isNaN => None
+		case x if x > 1.0 => Some("batteryDying")
+	}
+
   val cpuPartial: PartialFunction[Double, Option[String]] = {
     case x if x < 0.0 => None
-    case x if x > 100.0 => None
+    //case x if x > 100.0 => None
+    case x if x > 1.0 => None
     case x if x.isNaN => None
 	}
 
@@ -180,12 +188,12 @@ object Discretization {
 		val bins = scala.collection.mutable.Map[String, Seq[Double]]()
 
 		// RATE
-		val rates = samples.map(_.rate)
+		//val rates = samples.map(_.rate)
 		//rates.cache()
 		//val rateMin = 
 		//val rateQuantiles = getQuantiles(rates, 4)
 		//val rateQuantiles = getQuantiles(samples.map(_.rate), 4)
-		val (rateQuantiles, rateMin, rateMax) = getQuantiles(samples.map(_.rate), 4)
+		val (rateQuantiles, rateMin, rateMax) = getQuantiles(samples.map(_.rate), 4, partial = ratePartial)
 		//bins("rate") = Seq(0.0) ++ rateQuantiles.toSeq ++ Seq(1.0)
 		bins("rate") = Seq(rateMin) ++ rateQuantiles.toSeq ++ Seq(rateMax)
 
