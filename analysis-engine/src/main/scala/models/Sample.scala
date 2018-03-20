@@ -93,22 +93,26 @@ object Discretization {
   val cpuPartial: PartialFunction[Double, Option[String]] = {
     case x if x < 0.0 => None
     case x if x > 100.0 => None
+    case x if x.isNaN => None
 	}
 
   val travelDistancePartial: PartialFunction[Double, Option[String]] = {
     case x if x >= 100 => Some("yes")
     case x if x < 100 => Some("no")
+    case x if x.isNaN => None
   }
 
   val temperaturePartial: PartialFunction[Double, Option[String]] = {
     case x if x < 5 => None
     case x if x > 100 => None
+    case x if x.isNaN => None
   }
 
   val screenPartial: PartialFunction[Double, Option[String]] = {
     case x if x == -1 => Some("auto")
     case x if x < -1 => None
     case x if x > 255 => None
+    case x if x.isNaN => None
   }
 
   val mobileNetworkPartial: PartialFunction[String, Option[String]] = {
@@ -124,10 +128,12 @@ object Discretization {
   val wifiStrengthPartial: PartialFunction[Double, Option[String]] = {
     case x if x < -100 => None
     case x if x > 0 => None
+    case x if x.isNaN => None
   }
 
   val wifiSpeedPartial: PartialFunction[Double, Option[String]] = {
     case x if x < 0 => None
+    case x if x.isNaN => None
   }
 
   // returns percentiles, min and max
