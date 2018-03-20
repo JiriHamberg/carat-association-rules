@@ -147,7 +147,7 @@ object Discretization {
     try {
     	//val Row(min: Double, max: Double) = notDefined.agg(min("col"), max("col"))
     	val dataFrame = notDefined.toDF("col").cache()
-    	val Row(minValue: Double, maxValue: Double) = dataFrame.agg(min("col"), max("col"))
+    	val Row(minValue: Double, maxValue: Double) = dataFrame.agg(min("col"), max("col")).head
     	(dataFrame.stat.approxQuantile("col", percentiles, relativeError), minValue, maxValue)
 		  //(notDefined.toDF("col").stat.approxQuantile("col", percentiles, relativeError), min, max)
     } catch{
