@@ -5,6 +5,8 @@ import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.DataFrame
 import org.apache.spark.sql.SQLContext
 
+import org.apache.spark.sql.functions.{min, max}
+import org.apache.spark.sql.Row
 
 case class Sample(
 	rate: Double,
@@ -68,7 +70,7 @@ case class SampleDiscretization(
 )
 
 
-object SampleDiscretization {
+/*object SampleDiscretization {
   def fromSamples(samples: RDD[Sample], nBins: Int = 4)(implicit sqlContext: SQLContext): SampleDiscretization = {
 
       SampleDiscretization(
@@ -83,7 +85,7 @@ object SampleDiscretization {
       )
   }
 
-}
+}*/
 
 
 object Discretization {
@@ -128,12 +130,13 @@ object Discretization {
     case x if x < 0 => None
   }
 
+  // returns percentiles, min and max
 	def getQuantiles(
 		data: RDD[Double],
 		buckets: Int,
 		relativeError: Double = 0.0001,
 		partial: PartialFunction[Double, Option[String]] = Map.empty)
-		(implicit sqlContext: SQLContext): Array[Double] = {
+		(implicit sqlContext: SQLContext): (Array[Double], Double, Double) = {
 
 		import sqlContext.implicits._
 
@@ -142,10 +145,14 @@ object Discretization {
     //val quantiles = notDefined.toDF("col").stat.approxQuantile("col", percentiles, relativeError)
 
     try {
-		  notDefined.toDF("col").stat.approxQuantile("col", percentiles, relativeError)
+    	//val Row(min: Double, max: Double) = notDefined.agg(min("col"), max("col"))
+    	val dataFrame = notDefined.toDF("col").cache()
+    	val Row(minValue: Double, maxValue: Double) = dataFrame.agg(min("col"), max("col"))
+    	(dataFrame.stat.approxQuantile("col", percentiles, relativeError), minValue, maxValue)
+		  //(notDefined.toDF("col").stat.approxQuantile("col", percentiles, relativeError), min, max)
     } catch{
       //see https://issues.apache.org/jira/browse/SPARK-21550
-      case ex: java.util.NoSuchElementException => Array[Double]()
+      case ex: java.util.NoSuchElementException => (Array[Double](), 0, 0)
     }
 	}
 
@@ -167,40 +174,52 @@ object Discretization {
 		val bins = scala.collection.mutable.Map[String, Seq[Double]]()
 
 		// RATE
-		val rateQuantiles = getQuantiles(samples.map(_.rate), 4)
-		bins("rate") = Seq(0.0) ++ rateQuantiles.toSeq ++ Seq(1.0)
+		val rates = samples.map(_.rate)
+		//rates.cache()
+		//val rateMin = 
+		//val rateQuantiles = getQuantiles(rates, 4)
+		//val rateQuantiles = getQuantiles(samples.map(_.rate), 4)
+		val (rateQuantiles, rateMin, rateMax) = getQuantiles(samples.map(_.rate), 4)
+		//bins("rate") = Seq(0.0) ++ rateQuantiles.toSeq ++ Seq(1.0)
+		bins("rate") = Seq(rateMin) ++ rateQuantiles.toSeq ++ Seq(rateMax)
 
-		val cpuQuantiles = getQuantiles(samples.map(_.cpu), 4, partial = cpuPartial)
+		//val cpuQuantiles = getQuantiles(samples.map(_.cpu), 4, partial = cpuPartial)
+		val (cpuQuantiles, cpuMin, cpuMax) = getQuantiles(samples.map(_.cpu), 4, partial = cpuPartial)
     if(!excluded.contains("cpu"))
-		  bins("cpu") = Seq(0.0) ++ cpuQuantiles.toSeq ++ Seq(100.0)
+		  bins("cpu") = Seq(cpuMin) ++ cpuQuantiles.toSeq ++ Seq(cpuMax)
 
 		// TEMPERATURE
-		val temperatureQuantiles = getQuantiles(samples.map(_.temp), 4, partial = temperaturePartial)
+		//val temperatureQuantiles = getQuantiles(samples.map(_.temp), 4, partial = temperaturePartial)
+		val (temperatureQuantiles, tempMin, tempMax) = getQuantiles(samples.map(_.temp), 4, partial = temperaturePartial)
 		if(!excluded.contains("temperature"))
-    bins("temperature") = Seq(5.0) ++ temperatureQuantiles.toSeq ++ Seq(100.0)
+    bins("temperature") = Seq(tempMin) ++ temperatureQuantiles.toSeq ++ Seq(tempMax)
 
 		// VOLTAGE
-		val voltageQuantiles = getQuantiles(samples.map(_.voltage), 3)
-		bins("voltage") = Seq(0.0) ++ voltageQuantiles.toSeq ++ Seq(6.0)
+		//val voltageQuantiles = getQuantiles(samples.map(_.voltage), 3)
+		val (voltageQuantiles, voltageMin, voltageMax) = getQuantiles(samples.map(_.voltage), 3)
+		bins("voltage") = Seq(voltageMin) ++ voltageQuantiles.toSeq ++ Seq(voltageMax)
 
 		// SCREEN
-		val screenQuantiles = getQuantiles(samples.map(_.screen), 4, partial = screenPartial)
+		//val screenQuantiles = getQuantiles(samples.map(_.screen), 4, partial = screenPartial)
+		val (screenQuantiles, screenMin, screenMax) = getQuantiles(samples.map(_.screen), 4, partial = screenPartial)
 		if(!excluded.contains("screen"))
-      bins("screen") = Seq(0.0) ++ screenQuantiles.toSeq ++ Seq(255.0)
+      bins("screen") = Seq(screenMin) ++ screenQuantiles.toSeq ++ Seq(screenMax)
 
 		// MOBILE NETWORK TYPE
 
 		// NETWORK TYPE
 
 		//WIFI STRENGTH
-		val wifiStrengthQuantiles = getQuantiles(samples.map(_.wifiStrength), 4, partial = wifiStrengthPartial)
+		//val wifiStrengthQuantiles = getQuantiles(samples.map(_.wifiStrength), 4, partial = wifiStrengthPartial)
+		val (wifiStrengthQuantiles, wifiStrengthMin, wifiStrengthMax) = getQuantiles(samples.map(_.wifiStrength), 4, partial = wifiStrengthPartial)
 		if(!excluded.contains("wifiStrength"))
-      bins("wifiStrength") = Seq(-100.0) ++ wifiStrengthQuantiles.toSeq ++ Seq(0.0)
+      bins("wifiStrength") = Seq(wifiStrengthMin) ++ wifiStrengthQuantiles.toSeq ++ Seq(wifiStrengthMax)
 
 		//WIFI SPEED
-		val wifiSpeedQuantiles = getQuantiles(samples.map(_.wifiSpeed), 4, partial = wifiSpeedPartial)
+		//val wifiSpeedQuantiles = getQuantiles(samples.map(_.wifiSpeed), 4, partial = wifiSpeedPartial)
+		val (wifiSpeedQuantiles, wifiSpeedMin, wifiSpeedMax) = getQuantiles(samples.map(_.wifiSpeed), 4, partial = wifiSpeedPartial)
 		if(!excluded.contains("wifiSpeed"))
-      bins("wifiSpeed") = Seq(0.0) ++ wifiSpeedQuantiles.toSeq ++ Seq(Double.PositiveInfinity)
+      bins("wifiSpeed") = Seq(wifiSpeedMin) ++ wifiSpeedQuantiles.toSeq ++ Seq(wifiSpeedMax)
 
 		val features = samples.map { sample =>
 			Array(

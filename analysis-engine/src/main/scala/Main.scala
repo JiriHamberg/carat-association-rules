@@ -78,9 +78,9 @@ object Main {
 
     val samples = readCaratRates(ratePath).collect {
       case rate if rate.allApps().contains(applicationName) => Sample.fromCaratRate(rate)
-    }
+    }.cache()
 
-    samples.cache()
+    //samples.cache()
 
     val (features, bins) = Discretization.getFeatures(samples, excluded)
 
