@@ -92,8 +92,29 @@ object Discretization {
     case x if x.isNaN => None
   }
 
+  //see https://developer.android.com/reference/android/telephony/TelephonyManager.html for referefence
+  val numberPattern = "(\\d+)".r
   val mobileNetworkPartial: PartialFunction[String, Option[String]] = {
-    case "unknown" | "null" | "0" | "16" | "18" | "19" | "30" => Some("unknown")
+    case "unknown" | "null" => Some("unknown")
+    case "7" => Some("1xrtt")
+    case "4" => Some("cdma")
+    case "2" => Some("edge")
+    case "14" => Some("ehrpd")
+    case "5" => Some("evdo_0")
+    case "6" => Some("evdo_a")
+    case "12" => Some("evdo_b")
+    case "1" => Some("gprs")
+    case "16" => Some("gsm")
+    case "8" => Some("hsdpa")
+    case "10" => Some("hspa")
+    case "15" => Some("hspap")
+    case "9" => Some("hsupa")
+    case "11" => Some("iden")
+    case "18" => Some("iwlan")
+    case "13" => Some("lte")
+    case "17" => Some("td_scdma")
+    case "3" => Some("umts")
+    case numberPattern(num) => Some("unknown")
     case x => Some(x)
   }
 
